@@ -335,6 +335,7 @@ void Device::Enable()
 static void DeviceSetup(const int dev, int &ngpu)
 {
    ngpu = CuGetDeviceCount();
+	printf("Found %d \n", ngpu);
    MFEM_VERIFY(ngpu > 0, "No CUDA device found!");
    MFEM_GPU_CHECK(cudaSetDevice(dev));
 }
